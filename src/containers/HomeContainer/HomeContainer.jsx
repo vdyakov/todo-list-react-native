@@ -1,17 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import Navigation from '../../components/Navigation/Navigation';
 import { generateId } from '../../helpers/index';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, ScrollView } from 'react-native';
 import Container from '../../components/Container/Container';
 import AddForm from '../../components/AddForm/AddForm';
+import TodoList from '../../components/TodoList/TodoList';
 
 const styles = StyleSheet.create({
   content: {
     flex: 1,
   },
   container: {
+    backgroundColor: '#fafafa',
     paddingTop: 32,
     paddingBottom: 32,
+    paddingLeft: 16,
+    paddingRight: 16,
   },
 });
 
@@ -57,9 +61,10 @@ export default function HomeContainer() {
   return (
     <Container>
       <Navigation title="Todo List React Native" />
-      <Container style={styles.container}>
+      <ScrollView style={styles.container}>
         <AddForm addToDo={addToDo} />
-      </Container>
+        <TodoList todoList={rows} handleRemoveItem={handleRemoveItem} handleCheckItem={handleCheckItem} />
+      </ScrollView>
     </Container>
   );
 }

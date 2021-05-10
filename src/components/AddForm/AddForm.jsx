@@ -7,6 +7,16 @@ const styles = StyleSheet.create({
   root: {
     padding: 20,
     marginBottom: 20,
+    borderRadius: 4,
+    backgroundColor: '#fff',
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.18,
+    shadowRadius: 1.00,
+    elevation: 1,
   },
   container: {
     flexDirection: 'row',
@@ -14,10 +24,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   textField: {
-    width: '80%',
+    width: '75%',
   },
   appButtonContainer: {
-    width: '15%',
+    width: '20%',
     backgroundColor: '#3f51b5',
     elevation: 8,
     borderRadius: 10,
