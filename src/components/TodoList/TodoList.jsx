@@ -37,7 +37,7 @@ const TodoList = (props) => {
   const { todoList = [], handleRemoveItem, handleCheckItem } = props;
 
   const getCheckIcon = (check) => check
-    ? <Icon name="check-circle" color="#3f51b5" />
+    ? <Icon name="check-circle" style={{ opacity: 0.3 }} color="#3f51b5" />
     : <Icon name="radio-button-unchecked" color="#3f51b5" />;
 
   return (
@@ -48,7 +48,7 @@ const TodoList = (props) => {
         : (<View>
           {todoList.sort((a, b) => a.completed - b.completed).map((item) => (
             <ListItem
-              disabled={true}
+              key={item.id}
               leftElement={getCheckIcon(item.completed)}
               rightElement="delete"
               centerElement={item.title}
